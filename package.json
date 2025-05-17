@@ -2,7 +2,6 @@
   "name": "y",
   "version": "1.0.0",
   "description": "This is Namaste React",
-  "main": "index.js",
   "scripts": {
     "test": "jest"
   },
@@ -26,5 +25,9 @@
   "homepage": "https://github.com/kaka8shagy/namaste-react#readme",
   "devDependencies": {
     "parcel": "^2.15.1"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }
