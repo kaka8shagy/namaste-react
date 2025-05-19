@@ -37,4 +37,11 @@
 1. Class Component - OLD
 2. Functional Component - NEW
 - Must be named starting with capital letter to make sure React understands its a component
-- 
+- These 3 do the same thing
+    1. {Title()}
+    2. <Title />
+    3. <Title></Title>
+
+## Cross Site Scripting
+- If you get some response from API or user, and use it in your JS it might be harmful
+- React handles this for you by sanitizing your input
