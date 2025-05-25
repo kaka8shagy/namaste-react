@@ -45,3 +45,8 @@
 ## Cross Site Scripting
 - If you get some response from API or user, and use it in your JS it might be harmful
 - React handles this for you by sanitizing your input
+
+## Learn about building config driven UI
+- Where you get data in a certain way and based on that you show the UI
+- A good senior dev must have knowledge of APIs and contribute to how to structure the APIs and their responses
+- 
