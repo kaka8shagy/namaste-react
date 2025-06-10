@@ -49,4 +49,7 @@
 ## Learn about building config driven UI
 - Where you get data in a certain way and based on that you show the UI
 - A good senior dev must have knowledge of APIs and contribute to how to structure the APIs and their responses
-- 
+
+## CDN
+- Used to store static content
+- Easy to access, cache for long time, also region based availability so less latency
