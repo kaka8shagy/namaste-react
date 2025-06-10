@@ -53,3 +53,10 @@
 ## CDN
 - Used to store static content
 - Easy to access, cache for long time, also region based availability so less latency
+
+## Key is required
+- Each item in a list needs its own unique key
+- This helps React be more performant
+- React needs to know which element is linked to which item for which it needs the key
+- So if a new element comes in with a new key, React will just add that and keep everything else as it is
+- React recommends not to use index as a key if the order of items can change

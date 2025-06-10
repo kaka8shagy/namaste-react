@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 
 
@@ -41,7 +41,7 @@ const RestaurantCard = ({ restaurant: { name, imageUrl, score, cuisines } }) => 
 
 
 const Body = () => {
-    const restaurants = [
+    const [restaurants, setRestaurants] = useState([
         {
             name: 'Meghana Foods',
             score: 4.2,
@@ -54,7 +54,18 @@ const Body = () => {
             cuisines: ['Dosa', 'Idli'],
             imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHN8ZW58MHx8MHx8fDA%3D',
         }
-    ]
+    ]);
+    setTimeout(() => {
+        setRestaurants((prevRestaurants) => [
+            {
+                name: 'Meghana Desserts',
+                score: 3.5,
+                cuisines: ['Ice Cream', 'Cake'],
+                imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHN8ZW58MHx8MHx8fDA%3D',
+            },
+            ...prevRestaurants,
+        ]);
+    }, 5000);
     return (
         <div>
             <div className="search-container">
