@@ -1,8 +1,10 @@
-const Header = () => {
+import { LOGO_URL } from '../utils/constants';
+
+export const Header = () => {
     return (
         <div className="header">
             <div className="logo-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Swiggy_logo.png" alt="Logo" />
+                <img src={LOGO_URL} alt="Logo" />
             </div>
             <div className="nav-container">
                 <ul className="nav-items">

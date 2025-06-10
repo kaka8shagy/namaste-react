@@ -60,3 +60,13 @@
 - React needs to know which element is linked to which item for which it needs the key
 - So if a new element comes in with a new key, React will just add that and keep everything else as it is
 - React recommends not to use index as a key if the order of items can change
+
+## Code Structure
+- All the JS code should be inside `src` folder
+- All components should be kept inside `components` folder
+- You can structure pages/features as well, but make sure to be consistent
+- Have separate files for constants
+- Have a utils folder where you have all utility functions, preferrably in appropriately named files
+- 2 types of exports
+  - default should be used mostly when exporting a single thing (eg. component)
+  - named should be used where there are multiple exports from a single file
