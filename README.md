@@ -70,3 +70,15 @@
 - 2 types of exports
   - default should be used mostly when exporting a single thing (eg. component)
   - named should be used where there are multiple exports from a single file
+
+## React Hooks
+- Utility functions provided by React to help manage state of components
+- Most important hooks
+1. useState
+2. useEffect
+
+## Reconciliation Algorithm aka React Fiber (came with React 16)
+- React builds a virtual DOM based on the state, props and JSX
+- Virtual DOM is representation of actual DOM
+- Diff algorithm finds the difference between 2 virtual DOMS previous and current (basically diff between 2 JS objects)
+- Read more about it and in detail here https://github.com/acdlite/react-fiber-architecture
