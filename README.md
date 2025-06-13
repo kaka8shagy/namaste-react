@@ -102,7 +102,7 @@
 - CorsProxy allows web applications to securely access resources from different domains, overcoming browser restrictions.
 - This will help you with localhost as well as cross origin requests
 
-## Routing in React
+## Somethings about React Hooks
 - useEffect is called
     - everytime the component is rendered when no dependency array
     - only once on intial render when empty dependency array
