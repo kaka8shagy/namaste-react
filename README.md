@@ -109,3 +109,5 @@
     - called only when dependency changes when dependency array has values
 - Always have useState on the top of component code
 - Never use hooks inside if else
+
+## Routing in React

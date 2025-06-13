@@ -8,8 +8,7 @@ export const Header = () => {
             </div>
             <div className="nav-container">
                 <ul className="nav-items">
-                    <li>Restaurants</li>
-                    <li>Dishes</li>
+                    <li>About</li>
                     <li>Contact</li>
                 </ul>
             </div>
