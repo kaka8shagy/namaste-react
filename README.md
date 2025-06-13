@@ -95,3 +95,9 @@
 - Now all the small services need to communicate with each other
 - Think of your react app as a microservice which connects with multiple services to build its UI
 - Each service will run on a different port
+
+## Handle CORS error on local
+- Use a CORS plugin to handle it OR
+- Use https://corsproxy.io/ like this https://corsproxy.io/?url=https://example.com
+- CorsProxy allows web applications to securely access resources from different domains, overcoming browser restrictions.
+- This will help you with localhost as well as cross origin requests

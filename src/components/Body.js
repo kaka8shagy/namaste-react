@@ -21,11 +21,22 @@ const Body = () => {
         }
     };
 
+    const extractAllRestaurants = (data) => {
+        let allRestaurants = [];
+        data?.data?.cards.forEach(card => {
+            if (card?.card?.card?.gridElements?.infoWithStyle?.restaurants) {
+                allRestaurants = card.card.card.gridElements.infoWithStyle.restaurants;
+            }
+        });
+        console.log('Extracted restaurants:', allRestaurants);
+        return allRestaurants;
+    };
+
     useEffect(() => {
         // Initial load of restaurants
         fetchWithCache('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.971599&lng=77.594566&page_type=DESKTOP_WEB_LISTING')
             .then(data => {
-                const restaurants = data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+                const restaurants = extractAllRestaurants(data);
                 setAllRestaurants(restaurants);
                 setVisibleRestaurants(restaurants);
             })

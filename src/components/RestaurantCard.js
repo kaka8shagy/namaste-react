@@ -1,6 +1,15 @@
 import {IMAGE_URL} from '../utils/constants';
 
-const RestaurantCard = ({ restaurant: { name, cloudinaryImageId, avgRating, cuisines } }) => {
+const RestaurantCard = ({ restaurant }) => {
+    const {
+        name,
+        cloudinaryImageId,
+        avgRating,
+        cuisines,
+        costForTwo,
+        sla,
+        totalRatingsString,
+    }= restaurant;
     const imageUrl = `${IMAGE_URL}/${cloudinaryImageId}`;
     return (
         <div className="restaurant-card">
@@ -12,9 +21,10 @@ const RestaurantCard = ({ restaurant: { name, cloudinaryImageId, avgRating, cuis
                     <h3 className="restaurant-name">{ name }</h3>
                     <span className="restaurant-score">{avgRating}</span>
                 </div>
-                <div>
-                    {cuisines.join(', ')}
-                </div>
+                <div>Cuisines: {cuisines.join(', ')}</div>
+                <div>Cost for 2: {costForTwo}</div>
+                <div>Delivery Time: {sla.slaString}</div>
+                <div>Users Rated: {totalRatingsString}</div>
             </div>
         </div>
     );

@@ -64,3 +64,13 @@ li {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
+.restaurant-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restaurant-img img {
+    height: 200px;
+}
