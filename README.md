@@ -82,3 +82,16 @@
 - Virtual DOM is representation of actual DOM
 - Diff algorithm finds the difference between 2 virtual DOMS previous and current (basically diff between 2 JS objects)
 - Read more about it and in detail here https://github.com/acdlite/react-fiber-architecture
+
+## Monolith vs Microservices Architecture
+- Traditionally we only had monolith project, where we had a single app which contained everything no matter how big
+- But this caused multiple issues, like these
+1. build everything for a small change
+2. test everything for a small change
+3. hard to manage if different teams are working on it
+- Microservices was introduced to address this issue specifically
+- It breaks down a big app into multiple smaller ones which communicate with each other when required
+- The main reason here is Separation of Concern and Single Responsibility Principle
+- Now all the small services need to communicate with each other
+- Think of your react app as a microservice which connects with multiple services to build its UI
+- Each service will run on a different port
