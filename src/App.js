@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import ReactDOM from 'react-dom/client';
 
 
@@ -14,10 +12,6 @@ import Error from './components/Error';
 
 
 const AppLayout = () => {
-    console.log('render AppLayout');
-    useEffect(() => {
-        console.log('componentDidMount AppLayout');
-    }, []);
     return (
         <div className="app">
             <Header />

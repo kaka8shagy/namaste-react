@@ -1,30 +1,49 @@
 import React from 'react';
 
+import fetchWithCache from '../utils/fetchWithCache';
+
 class UserClass extends React.Component {
     constructor(props) {
         super(props);
-        console.log('constructor UserClass' + this.props.name);
         this.state = {
-            count: 0,
+            name: 'Dummy',
+            location: 'Default',
+            avatar_url: '',
         };
     }
     componentDidMount() {
-        console.log('componentDidMount UserClass' + this.props.name);
+        console.log('UserClass component mounted');
+        setTimeout(async () => {
+            const userData = await fetchWithCache('https://api.github.com/users/kaka8shagy');
+        
+            this.setState({
+                name: userData.name,
+                location: userData.location,
+                imgUrl: userData.avatar_url || '',
+            });
+        }, 2000);
+    }
+    componentDidUpdate(prevProps, prevState) {
+        console.log('UserClass component updated');
+    }
+    componentWillUnmount() {
+        console.log('UserClass component will unmount');
     }
     render() {
-        console.log('render UserClass' + this.props.name);
+        const {
+            name, location, imgUrl
+        } = this.state;
         return (
             <div className="user-card">
-                <h1>Name: {this.props.name}</h1>
-                <h2>Location: {this.props.location}</h2>
-                <h3>Contact: {this.props.contact}</h3>
-                <button 
-                    onClick={() => 
-                        this.setState({ count: this.state.count + 1})
-                    }
-                >
-                    Click Count: {this.state.count}
-                </button>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <div>
+                        <img className="avatar-image" src={imgUrl} />
+                    </div>
+                    <div>
+                        <h1>Name: {name}</h1>
+                        <h2>Location: {location}</h2>
+                    </div>
+                </div>
             </div>
         )
     }

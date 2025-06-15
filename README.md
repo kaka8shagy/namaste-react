@@ -139,4 +139,16 @@
 - Refer https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/ for understanding lifecycle methods
 - React optimizes its lifecycle methods. It will call constructor and render for all but the commit phase will be 
   batched
-- This is done because DOM manipulation is expensive and heavy. That is why React combines all commit phase for all components
+- This is done because DOM manipulation is expensive and heavy. That is why React combines all commit phase for all 
+  components
+- Never compare react lifecycle methods to hooks, because it will lead to incorrect understanding
+- React devs removed all the fluff that was there around lifecycle methods and created hooks to simplify React 
+  development
+- Its important to know class as well, to understand how to write better code. Once you know class way and hooks 
+  way you know how to simplify coding
+- In class components you had to write a lot of code but the same thing could be done in a few lines using hooks
+- You become a senior dev 
+  - understand each and every statement they write
+  - when you know why we do the small things the way we do them
+  - if you create mess you should clean it up as well
+
