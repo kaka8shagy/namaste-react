@@ -121,3 +121,22 @@
 ## GraphQL
 - Helps limit the amount of data you fetch
 - You can fetch only those details that you actually need, fetch more if required
+
+## Class based component
+- Use class and constructor
+- Class must extend React.Component
+  - It is necessary for class components to gain access to React's core features, enabling them to manage state
+    respond to lifecycle events, and render UI elements.
+- Use this.state and this.props for state and props
+- setState in class = useState in function
+- Doing super(props) in constructor is a must
+  - Refer this article by Dan Abramov https://overreacted.io/why-do-we-write-super-props/
+  - You can't use this unless you have called super in constructor
+  - Component class sets up this.props for you
+  - If you don't pass props its fine because React does it for you later but then you will not have access to this
+    props until the end of contructor
+- componentDidMount is called once the initial rendering is done
+- Refer https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/ for understanding lifecycle methods
+- React optimizes its lifecycle methods. It will call constructor and render for all but the commit phase will be 
+  batched
+- This is done because DOM manipulation is expensive and heavy. That is why React combines all commit phase for all components

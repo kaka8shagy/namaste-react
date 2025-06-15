@@ -181,3 +181,12 @@ li {
     max-height: 1000px; /* Adjust if your content can be taller */
     opacity: 1;
 }
+
+.user-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

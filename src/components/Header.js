@@ -1,8 +1,14 @@
+import { useEffect } from 'react';
+
 import { Link } from 'react-router';
 
 import { LOGO_URL } from '../utils/constants';
 
 export const Header = () => {
+    console.log('render Header');
+    useEffect(() => {
+        console.log('componentDidMount Header');
+    }, []);
     return (
         <div className="header">
             <div className="logo-container">
