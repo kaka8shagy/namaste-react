@@ -111,3 +111,13 @@
 - Never use hooks inside if else
 
 ## Routing in React
+- 2 types of Routing in Web Development
+1. Client Side - New Modern Way (SPA)
+2. Server Side - Old traditional way
+- In React we want to do client side routing
+- React Router is a powerful tool for having simple navigation while building a SPA
+- 
+
+## GraphQL
+- Helps limit the amount of data you fetch
+- You can fetch only those details that you actually need, fetch more if required

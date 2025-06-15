@@ -3,6 +3,11 @@ img {
     max-height: 100%;
 }
 
+ul {
+    padding: 0;
+    margin: 0;
+}
+
 .flex {
     display: flex;
 }
@@ -73,4 +78,106 @@ li {
 
 .restaurant-img img {
     height: 200px;
+}
+
+.menu-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+}
+
+.menu-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden; /* Important for smooth animation */
+}
+
+.card-toggle-button {
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.card-content {
+    max-height: 1000px; /* Set a large enough max-height for expanded state */
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.card-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-top: -10px; /* Optional: to reduce space when collapsed if padding/margin on children */
+}
+
+.card-content.expanded {
+    max-height: 1000px; /* Adjust if your content can be taller */
+    opacity: 1;
+}
+
+.menu-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden; /* Important for smooth animation */
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;;
+}
+
+.card-toggle-button {
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.card-content {
+    max-height: 1000px; /* Set a large enough max-height for expanded state */
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.card-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-top: -10px; /* Optional: to reduce space when collapsed if padding/margin on children */
+}
+
+.card-content.expanded {
+    max-height: 1000px; /* Adjust if your content can be taller */
+    opacity: 1;
 }

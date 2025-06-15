@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router";
 
 import RestaurantCard from "./RestaurantCard";
 
 import fetchWithCache from "../utils/fetchWithCache";
+
+import {API_URL} from "../utils/constants";
 
 const Body = () => {
     const [allRestaurants, setAllRestaurants] = useState([]);
@@ -34,7 +37,8 @@ const Body = () => {
 
     useEffect(() => {
         // Initial load of restaurants
-        fetchWithCache('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.971599&lng=77.594566&page_type=DESKTOP_WEB_LISTING')
+        // const URL = 'https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
+        fetchWithCache(API_URL)
             .then(data => {
                 const restaurants = extractAllRestaurants(data);
                 setAllRestaurants(restaurants);
@@ -53,7 +57,9 @@ const Body = () => {
             </div>
             <div className="restaurant-container">
                 {visibleRestaurants.map(({ info }) => 
-                    <RestaurantCard key={info.id} restaurant={info} />
+                    <Link to={`/restaurant/${info.id}`} key={info.id}>
+                        <RestaurantCard  restaurant={info} />
+                    </Link>
                 )}
             </div>
         </div>
