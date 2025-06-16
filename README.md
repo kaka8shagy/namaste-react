@@ -172,3 +172,14 @@
   - Its suggested by React team
   - It makes sense
 
+## How to build your JS
+- Break down your app into smaller bundles has many names
+  - chunking 
+  - code splitting
+  - dynamic bundling
+  - lazy loading
+  - on-demand loading
+  - dynamic import
+- You need to build strong logic to understand and break down large app into smaller parts which would each be a 
+  separate bundle
+- Use lazy and Suspense together to create chunks and also lazy load (on-demand)
