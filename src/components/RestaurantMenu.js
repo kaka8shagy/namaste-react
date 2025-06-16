@@ -1,30 +1,13 @@
-import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 
-import fetchWithCache from '../utils/fetchWithCache';
+import useRestaurantMenu from '../utils/useRestaurantMenu';
 
 import {IMAGE_URL} from '../utils/constants';
 import Card from './Card';
 
 const RestaurantMenu = () => {
-    const [restaurantDetails, setRestaurantDetails] = useState(null);
-    const [restaurantMenu, setRestaurantMenu] = useState(null);
     const { resId } = useParams();
-
-    useEffect(() => {
-        const API_URL = 'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.99740&lng=79.00110'
-        const URL = `${API_URL}&restaurantId=${resId}`;
-        fetchWithCache(URL)
-            .then(data => {
-                console.log(data)
-                const resturant = data?.data?.cards[2]?.card?.card.info;
-                const menu = data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.map(card => card.card?.card).filter((card) => card.itemCards?.length);
-                setRestaurantDetails(resturant);
-                setRestaurantMenu(menu);
-                console.log('Restaurant Details:', resturant, menu);
-            })
-            .catch(error => console.error('Error fetching restaurants:', error));
-    }, []);
+    const { restaurantDetails, restaurantMenu } = useRestaurantMenu(resId);
 
     if (!restaurantDetails) {
         return <div>Loading...</div>;
@@ -58,12 +41,12 @@ const RestaurantMenu = () => {
                         <ul>
                             {menu.itemCards.map(({card: { info }}) => (
                                 <li key={info.id} className="menu-item">
-                                    <div>
+                                    <div className="menu-item-details">
                                         <p>{info.name}</p>
                                         <p>Price: {info.price ? info.price / 100 : 'N/A'}</p>
                                         <p>Description: {info.description || 'No description available'}</p>
                                     </div>
-                                    <div>
+                                    <div className="menu-item-img">
                                         {info.imageId && <img alt={info.name} src={`${IMAGE_URL}/${info.imageId}`} style={{ width: 100 }} />}
                                     </div>
                                 </li>

@@ -152,3 +152,23 @@
   - when you know why we do the small things the way we do them
   - if you create mess you should clean it up as well
 
+## Single Responsibility Principle
+- Each component should have a single responsibility
+- You should not do lot of things in a single component
+- You can also think of this as writing well structured and modular code where each piece does one thing and does 
+  it well
+
+## Custom Hooks
+- A hook is just a utility function which helps us do one thing
+- We can create our own hooks to create new functionalities
+- Custom hooks are not mandatory, but if required its a great thing to have
+- For eg. you can extract out all fetch and computation logic to a hook and the component can just use the hook and 
+  render the UI only
+- If you look at your code and think deeply you will come up with ideas about how to create your own useful hooks
+- For eg
+  - useLocalStorage
+  - useOnlineStatus
+- Alway use the word `use` as a prefix for hooks
+  - Its suggested by React team
+  - It makes sense
+

@@ -85,13 +85,13 @@ li {
     padding: 10px;
     margin: 10px 0;
     display: flex;
+    width: 600px;
+    align-items: center;
 }
 
-.menu-item {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px 0;
-    display: flex;
+.menu-item-details {
+    width: 450px;
+    margin-right: 10px;
 }
 
 .card {
@@ -115,7 +115,7 @@ li {
 }
 
 .card-content {
-    max-height: 1000px; /* Set a large enough max-height for expanded state */
+    max-height: 600px; /* Set a large enough max-height for expanded state */
     overflow: hidden;
     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
     opacity: 1;
@@ -128,8 +128,9 @@ li {
 }
 
 .card-content.expanded {
-    max-height: 1000px; /* Adjust if your content can be taller */
+    max-height: 600px; /* Adjust if your content can be taller */
     opacity: 1;
+    overflow: auto; /* Allow scrolling if content exceeds max-height */
 }
 
 .menu-item {
@@ -162,24 +163,6 @@ li {
     background-color: #f0f0f0;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
-
-.card-content {
-    max-height: 1000px; /* Set a large enough max-height for expanded state */
-    overflow: hidden;
-    transition: max-height 0.2s ease-in-out, opacity 0.2s ease-in-out;
-    opacity: 1;
-}
-
-.card-content.collapsed {
-    max-height: 0;
-    opacity: 0;
-    margin-top: -10px; /* Optional: to reduce space when collapsed if padding/margin on children */
-}
-
-.card-content.expanded {
-    max-height: 1000px; /* Adjust if your content can be taller */
-    opacity: 1;
 }
 
 .user-card {
