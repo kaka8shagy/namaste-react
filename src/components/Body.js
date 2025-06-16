@@ -51,14 +51,14 @@ const Body = () => {
         <div>
             <div className="search-container">
             </div>
-            <div className="filter-container">
-                <button className="filter-btn" onClick={() => updateList('top')}>Top Rated Restaurants</button>
-                <button className="filter-btn" onClick={() => updateList('veg')}>Veg Only Restaurants</button>
+            <div className="flex m-4 items-center">
+                <button type="button" className="mr-4 p-4 cursor-pointer rounded-lg bg-gray-200" onClick={() => updateList('top')}>Top Rated Restaurants</button>
+                <button type="button" className="mr-4 p-4 cursor-pointer rounded-lg bg-gray-200" onClick={() => updateList('veg')}>Veg Only Restaurants</button>
             </div>
-            <div className="restaurant-container">
+            <div className="restaurant-container flex flex-wrap justify-center">
                 {visibleRestaurants.map(({ info }) => 
                     <Link to={`/restaurant/${info.id}`} key={info.id}>
-                        <RestaurantCard  restaurant={info} />
+                        <RestaurantCard restaurant={info} />
                     </Link>
                 )}
             </div>

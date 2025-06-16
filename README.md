@@ -183,3 +183,31 @@
 - You need to build strong logic to understand and break down large app into smaller parts which would each be a 
   separate bundle
 - Use lazy and Suspense together to create chunks and also lazy load (on-demand)
+
+## Styling in React
+- You can use CSS, SASS, SCSS. But they do not scale well unless you want something very custom
+- Styled components is a famous approach in React
+- Companies prefer to use libraries and framework. 
+- There are design systems and libraries 
+  - Material UI (1st best for React)
+  - Bootstrap (was famouse before)
+  - Chakra UI
+  - ANT Design (2nd best for React)
+  - Tailwind
+- There are many libraries built with Material UI system
+- We will be using Tailwind for our learning
+- For tailwind always follow the official docs to set it up
+- Pros
+  - Build whatever you want to. Seriously
+  - Responsive everything
+  - Hover and focus state
+  - No duplication
+  - Light and Dark mode
+  - Instant beautification of UI
+  - Good defaults
+  - Highly modifiable
+  - Very light-weight
+  - It only imports classes that are used in code
+- Cons
+  - lot of classes make the code look bad
+  - A little hard to maintain with that many classes

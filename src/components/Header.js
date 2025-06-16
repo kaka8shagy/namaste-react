@@ -8,19 +8,19 @@ export const Header = () => {
     const isOnline = useOnlineStatus();
     const onlineStatus = isOnline ? '🟢' : '🔴';
     return (
-        <div className="header">
+        <div className="flex justify-between items-center shadow-lg p-2">
             <div className="logo-container">
                 <Link to="/">
-                    <img src={LOGO_URL} alt="Logo" />
+                    <img className="w-56" src={LOGO_URL} alt="Logo" />
                 </Link>
             </div>
             <div className="nav-container">
-                <ul className="nav-items">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                    <li><Link to="/grocery">Grocery</Link></li>
-                    <li>{`Online Status: ${onlineStatus}`}</li>
+                <ul className="flex p-4 m-4">
+                    <li className="ml-3"><Link to="/">Home</Link></li>
+                    <li className="ml-3"><Link to="/about">About</Link></li>
+                    <li className="ml-3"><Link to="/contact">Contact</Link></li>
+                    <li className="ml-3"><Link to="/grocery">Grocery</Link></li>
+                    <li className="ml-3">{`Online Status: ${onlineStatus}`}</li>
                 </ul>
             </div>
         </div>
