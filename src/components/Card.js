@@ -9,14 +9,14 @@ const Card = ({ children, title }) => {
   };
 
   return (
-    <div className="card">
-      <div className="card-header">
-        <h4>{title}</h4>
+    <div className="p-4 bg-gray-100 shadow-lg rounded-lg w-[600px] max-h-[400px] overflow-y-auto">
+      <div className="flex justify-between items-center mb-4">
+        <h4 className="font-bold">{title}</h4>
         <button onClick={toggleCollapse} className="card-toggle-button">
           {collapsed ? 'Open' : 'Close'}
         </button>
       </div>
-      <div className={`card-content ${collapsed ? 'collapsed' : 'expanded'}`}>
+      <div className={`${collapsed ? 'hidden' : ''}`}>
         {children}
       </div>
     </div>
