@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 
 import fetchWithCache from "../utils/fetchWithCache";
 
-import {API_URL} from "../utils/constants";
+import { API_URL } from "../utils/constants";
+
+
+const RestaurantCardPromoted = withPromotedLabel(RestaurantCard)
 
 const Body = () => {
     const [allRestaurants, setAllRestaurants] = useState([]);
@@ -46,6 +49,7 @@ const Body = () => {
             })
             .catch(error => console.error('Error fetching restaurants:', error));
     }, []);
+    console.log('restaurants: ', allRestaurants)
 
     return (
         <div>
@@ -55,10 +59,14 @@ const Body = () => {
                 <button type="button" className="mr-4 p-4 cursor-pointer rounded-lg bg-gray-200" onClick={() => updateList('top')}>Top Rated Restaurants</button>
                 <button type="button" className="mr-4 p-4 cursor-pointer rounded-lg bg-gray-200" onClick={() => updateList('veg')}>Veg Only Restaurants</button>
             </div>
-            <div className="restaurant-container flex flex-wrap justify-center">
+            <div className="restaurant-container flex flex-wrap justify-center gap-4">
                 {visibleRestaurants.map(({ info }) => 
                     <Link to={`/restaurant/${info.id}`} key={info.id}>
-                        <RestaurantCard restaurant={info} />
+                        {
+                            info?.badges?.imageBadges?.length 
+                                ? <RestaurantCardPromoted restaurant={info} />
+                                : <RestaurantCard restaurant={info} />
+                        }
                     </Link>
                 )}
             </div>

@@ -11,7 +11,7 @@ const RestaurantCard = ({ restaurant }) => {
     }= restaurant;
     const imageUrl = `${IMAGE_URL}/${cloudinaryImageId}`;
     return (
-        <div className="m-4 p-4 w-[250px] bg-gray-100 shadow-lg rounded-lg hover:bg-gray-200">
+        <div className="p-4 w-[250px] bg-gray-100 shadow-lg rounded-lg hover:bg-gray-200">
             <div className="restaurant-img">
                 <img className="rounded-lg" src={imageUrl} alt={name} />
             </div>
@@ -26,6 +26,15 @@ const RestaurantCard = ({ restaurant }) => {
             </div>
         </div>
     );
+}
+
+export const withPromotedLabel = (RestaurantCard) => {
+    return (props) => {
+        return <div>
+            <label className="absolute bg-black text-white p-2 rounded-lg">Promoted</label>
+            <RestaurantCard {...props} />
+        </div>
+    }
 }
 
 export default RestaurantCard;

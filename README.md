@@ -211,3 +211,7 @@
 - Cons
   - lot of classes make the code look bad
   - A little hard to maintain with that many classes
+
+## Higher Order Components
+- Its a function that takes a component and returns another component with some enhancement
+- 
