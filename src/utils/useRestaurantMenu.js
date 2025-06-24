@@ -11,12 +11,10 @@ const useRestaurantMenu = (resId) => {
         const URL = `${API_URL}&restaurantId=${resId}`;
         fetchWithCache(URL)
             .then(data => {
-                console.log(data)
                 const resturant = data?.data?.cards[2]?.card?.card.info;
                 const menu = data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.map(card => card.card?.card).filter((card) => card.itemCards?.length);
                 setRestaurantDetails(resturant);
                 setRestaurantMenu(menu);
-                console.log('Restaurant Details:', resturant, menu);
             })
             .catch(error => console.error('Error fetching restaurants:', error));
     }, []);

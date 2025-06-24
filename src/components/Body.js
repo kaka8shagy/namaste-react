@@ -49,7 +49,6 @@ const Body = () => {
             })
             .catch(error => console.error('Error fetching restaurants:', error));
     }, []);
-    console.log('restaurants: ', allRestaurants)
 
     return (
         <div>
