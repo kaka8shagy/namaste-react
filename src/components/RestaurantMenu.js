@@ -1,5 +1,8 @@
 import { useParams } from 'react-router';
 
+
+import { useState } from 'react';
+
 import useRestaurantMenu from '../utils/useRestaurantMenu';
 
 import {IMAGE_URL} from '../utils/constants';
@@ -9,6 +12,7 @@ import ItemList from './ItemList';
 const RestaurantMenu = () => {
     const { resId } = useParams();
     const { restaurantDetails, restaurantMenu } = useRestaurantMenu(resId);
+    const [showIndex, setShowIndex] = useState(0);
 
     if (!restaurantDetails) {
         return <div>Loading...</div>;
@@ -36,9 +40,13 @@ const RestaurantMenu = () => {
             </div>
             <h3 className="font-bold my-4">Menu: </h3>
             <div>
-                {restaurantMenu.map((menu) => 
+                {restaurantMenu.map((menu, index) => 
                     <div className="mb-4" key={menu.title}>
-                        <Card title={menu.title + ' (' +menu.itemCards.length + ')'}>
+                        <Card 
+                            title={menu.title + ' (' +menu.itemCards.length + ')'}
+                            showItems={index === showIndex}
+                            setOpen={() => showIndex === index ? setShowIndex(null) : setShowIndex(index)}
+                        >
                             <ItemList items={menu.itemCards} />
                         </Card>
                     </div>

@@ -214,4 +214,7 @@
 
 ## Higher Order Components
 - Its a function that takes a component and returns another component with some enhancement
-- 
+
+## Controlled and Uncontrolled components
+- Controlled - A component that is being controlled by parent component
+- Uncontrolled - A component that is not controlled by any component and maybe manages its own logic
