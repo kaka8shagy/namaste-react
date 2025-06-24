@@ -218,3 +218,15 @@
 ## Controlled and Uncontrolled components
 - Controlled - A component that is being controlled by parent component
 - Uncontrolled - A component that is not controlled by any component and maybe manages its own logic
+
+## Props Drilling & React Context
+- Props drilling is when you keep passing on props from parent to child and so on
+- This is a problem because its not a good practice
+- React Context helps with this
+- There are 2 ways to use context
+1. Using hooks
+2. Using Context.Consumer
+- Context can be passed to parts or whole
+- Use Context.Provider to update context values
+- Just wrap any component inside Context.Provider and it will use the value provided by context
+- You must master the data part of the app to ensure your React app works really well

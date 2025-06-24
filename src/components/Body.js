@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router";
 
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
@@ -6,6 +6,7 @@ import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import fetchWithCache from "../utils/fetchWithCache";
 
 import { API_URL } from "../utils/constants";
+import UserContext from '../utils/UserContext';
 
 
 const RestaurantCardPromoted = withPromotedLabel(RestaurantCard)
@@ -13,6 +14,7 @@ const RestaurantCardPromoted = withPromotedLabel(RestaurantCard)
 const Body = () => {
     const [allRestaurants, setAllRestaurants] = useState([]);
     const [visibleRestaurants, setVisibleRestaurants] = useState([]);
+    const { loggedInUser, setUserName } = useContext(UserContext);
     const updateList = (filterType) => {
         if (filterType === 'top') {
             // Logic to filter top rated restaurants
@@ -53,6 +55,13 @@ const Body = () => {
     return (
         <div>
             <div className="search-container">
+                <input
+                    type="text"
+                    placeholder="Set User Name"
+                    className="p-2 m-4 border border-gray-300 rounded-lg"
+                    value={loggedInUser}
+                    onChange={(e) => setUserName(e.target.value)}
+                />
             </div>
             <div className="flex m-4 items-center">
                 <button type="button" className="mr-4 p-4 cursor-pointer rounded-lg bg-gray-200" onClick={() => updateList('top')}>Top Rated Restaurants</button>
