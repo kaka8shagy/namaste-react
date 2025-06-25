@@ -230,3 +230,40 @@
 - Use Context.Provider to update context values
 - Just wrap any component inside Context.Provider and it will use the value provided by context
 - You must master the data part of the app to ensure your React app works really well
+
+## Redux
+- Redux works in the data layer of our app
+- Data layer and UI layer work in sync
+- In React, you just update the data and UI is updated automatically
+- IMPORTANT: Redux is not a mandatory
+- Redux is required only for a large scale application
+- For small to medium size apps, Redux is not required
+- Redux is required when you have lots of data and lots of read and writes
+- There is another library called zustand which is also gaining traction and does the same thing as Redux
+- Pros
+  - Redux helps manage lots of data
+  - Helps debug easily with devtools
+- Cons
+  - Not always required
+  - Boiler plate code required
+- Redux offers effective large scale state management and works with all UI libraries
+- There are 2 ways to use Redux
+  1. React-Redux
+  2. Redux Toolkit
+- We will be using redux-toolkit, which is now the standard way of using redux
+- Its ok to store all the data in Redux which is basically a large object
+- We break down the store into slices, which are just separate parts of the state(mostly logically separated)
+- How redux works
+  - Write: dispatch action which calls reducer function which updates the slice of our redux store
+  - Read: use selector (basically subscribe to store) to read data from store
+- How to setup
+  - Install @reduxjs/toolkit and react-redux
+  - Build the store
+  - Connect app to store
+  - Create slice for cart
+  - dispatch action (write data)
+  - selector (read data)
+- Ensure to use correct data while using selector
+- Redux uses Immer library internally
+- Use Redux Dev Tools to debug any issues, its a very powerful tool
+- read about RTK query
