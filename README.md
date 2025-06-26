@@ -301,3 +301,5 @@
   - Node
   - JS Dom (we will use this)
 - Both work like a browser
+- __ is known as dunder
+- We use it to avoid name collisions and ensure that name is unique and kept for tests
