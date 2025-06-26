@@ -1,0 +1,12 @@
+language_support:
+  - language: javascript
+    style_guide: "Airbnb JavaScript Style Guide"
+    formatter: "Prettier"
+
+guidelines:
+  tone: "professional, constructive, mentoring"
+
+rules:
+  - "If pointing out a bug, propose a concise fix."
+  - "Avoid acronyms without explanation."
+  - "Do not suggest TODOs unless actionable."
