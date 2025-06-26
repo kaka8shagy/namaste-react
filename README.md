@@ -267,3 +267,37 @@
 - Redux uses Immer library internally
 - Use Redux Dev Tools to debug any issues, its a very powerful tool
 - read about RTK query
+
+## Testing
+- We will only talk about dev testing. There are 2 ways
+  - Manual testing
+  - Automation testing
+- Every time we make a small change, we need to make sure the whole app is still working correctly
+- This is because one change could be affecting other areas in some way
+- All components are interacting so we need to ensure 1 area doesn't break another area
+- We should worry about every change we make even if its a single line of code
+- 3 types of testing done by code (developer)
+  - Unit testing - tests components in isolation
+  - Integration testing - tests components working together
+  - E2E testing - complete testing starting from landing on website till end of world
+- We will not cover E2E testing here, we will cover unit and integration testing only
+- We will use react testing library, which is built on top of DOM testing library
+- If you build project using create-react-app it includes react-testing-library
+- We will use Jest for writing unit tests
+- Jest is a delightful JS testing framework
+- RTL uses Jest internally
+
+## Setting up testing in our app
+- Install React Testing Library
+- Install Jest 
+- Install Babel related dependencies (we already have babel because of parcel)
+- Configure Babel
+- Configure parcel config file to disable default babel tranpilation
+- Configure jest
+- Install jsdom
+
+## About testing
+- While running test cases we need a run time, we have 2 options
+  - Node
+  - JS Dom (we will use this)
+- Both work like a browser
