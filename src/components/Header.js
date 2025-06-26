@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 import { useSelector } from 'react-redux';
 
@@ -14,7 +14,11 @@ export const Header = () => {
     const onlineStatus = isOnline ? '🟢' : '🔴';
     const userData = useContext(UserContext);
     const cartItems = useSelector((store) => store.cart.items);
+    const [isLoggedIn, setLoggedIn] = useState(false);
 
+    const handleLogin = () => {
+        setLoggedIn((prev) => !prev);
+    };
 
     return (
         <div className="flex justify-between items-center shadow-lg p-2">
@@ -40,6 +44,7 @@ export const Header = () => {
                         </Link>
                     </li>
                     <li className="ml-3">{`Online Status: ${onlineStatus}`}</li>
+                    <button className="ml-3 cursor-pointer" onClick={handleLogin}>{isLoggedIn ? 'Logout' : 'Login'}</button>
                     <li className="ml-3">{userData.loggedInUser}</li>
                     <UserContext.Consumer>
                         {({ loggedInUser }) => <li className="ml-3">{loggedInUser}</li>}
