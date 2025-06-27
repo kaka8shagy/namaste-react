@@ -46,4 +46,22 @@ describe("Body Component", () => {
         const cardsAfterSearch = screen.getAllByTestId("resCard");
         expect(cardsAfterSearch.length).toBe(1);
     });
+
+    it("should filter only vegetarian restaurants when clicking the 'Veg Only Restaurants' button", async () => {
+        await act(async () =>
+            render(
+                <BrowserRouter>
+                    <Body />
+                </BrowserRouter>
+            )
+        );
+
+        const vegButton = screen.getByRole("button", {
+            name: "Veg Only Restaurants",
+        });
+        fireEvent.click(vegButton);
+
+        const cardsAfterVegFilter = screen.getAllByTestId("resCard");
+        expect(cardsAfterVegFilter.length).toBe(4);
+    });
 });

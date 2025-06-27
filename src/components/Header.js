@@ -45,7 +45,10 @@ export const Header = () => {
                         <Link to="/cart">
                             <div className="flex items-center">
                                 <span>Cart</span>
-                                <span className="ml-2 rounded-full bg-gray-500 w-5 h-5 text-white text-center">
+                                <span
+                                    data-testid="cartItemCount"
+                                    className="ml-2 rounded-full bg-gray-500 w-5 h-5 text-white text-center"
+                                >
                                     {cartItems.length}
                                 </span>
                             </div>

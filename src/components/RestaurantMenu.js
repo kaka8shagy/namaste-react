@@ -1,13 +1,12 @@
-import { useParams } from 'react-router';
+import { useParams } from "react-router";
 
+import { useState } from "react";
 
-import { useState } from 'react';
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
-import useRestaurantMenu from '../utils/useRestaurantMenu';
-
-import {IMAGE_URL} from '../utils/constants';
-import Card from './Card';
-import ItemList from './ItemList';
+import { IMAGE_URL } from "../utils/constants";
+import Card from "./Card";
+import ItemList from "./ItemList";
 
 const RestaurantMenu = () => {
     const { resId } = useParams();
@@ -31,30 +30,43 @@ const RestaurantMenu = () => {
     return (
         <div className="m-4 p-4 flex flex-col items-center">
             <div>
-                <img alt={name} style={{ width: 150}} src={restaurantImageUrl} />
+                <img
+                    alt={name}
+                    style={{ width: 150 }}
+                    src={restaurantImageUrl}
+                />
                 <h1 className="font-bold">{name}</h1>
-                <p>Cuisines: {cuisines.join(', ')}</p>
+                <p>Cuisines: {cuisines.join(", ")}</p>
                 <p>Rating: {avgRating}</p>
                 <p>Cost for 2: {costForTwoMessage}</p>
                 <p>Delivery Time: {slaString}</p>
             </div>
             <h3 className="font-bold my-4">Menu: </h3>
             <div>
-                {restaurantMenu.map((menu, index) => 
-                    <div className="mb-4" key={menu.title}>
-                        <Card 
-                            title={menu.title + ' (' +menu.itemCards.length + ')'}
+                {restaurantMenu.map((menu, index) => (
+                    <div
+                        className="mb-4"
+                        key={menu.title}
+                        data-testid="menuCard"
+                    >
+                        <Card
+                            title={
+                                menu.title + " (" + menu.itemCards.length + ")"
+                            }
                             showItems={index === showIndex}
-                            setOpen={() => showIndex === index ? setShowIndex(null) : setShowIndex(index)}
+                            setOpen={() =>
+                                showIndex === index
+                                    ? setShowIndex(null)
+                                    : setShowIndex(index)
+                            }
                         >
                             <ItemList items={menu.itemCards} />
                         </Card>
                     </div>
-                )}
+                ))}
             </div>
         </div>
     );
-    
-}
+};
 
 export default RestaurantMenu;
