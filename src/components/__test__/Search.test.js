@@ -37,10 +37,15 @@ describe("Body Component", () => {
         const cardsBeforeSearch = screen.getAllByTestId("resCard");
         expect(cardsBeforeSearch.length).toBe(8);
 
+        const searchButton = screen.getByRole("button", { name: "Search" });
         const searchInput = screen.getByTestId("searchInput");
+
+        fireEvent.change(searchInput, { target: { value: "" } });
+        fireEvent.click(searchButton);
+        expect(cardsBeforeSearch.length).toBe(8);
+
         fireEvent.change(searchInput, { target: { value: "pizza" } });
 
-        const searchButton = screen.getByRole("button", { name: "Search" });
         fireEvent.click(searchButton);
 
         const cardsAfterSearch = screen.getAllByTestId("resCard");
