@@ -353,3 +353,9 @@
 -   Use describe to group test cases
 -   Use beforeEach and beforeAll to do setup before running tests
 -   Use afterEach and afterAll for cleanup
+
+## Time for Projects
+
+-   NetflixGPT (12 hours)
+-   Youtube (9 hours)
+-   DevTinder (7 hours)
